@@ -21,9 +21,9 @@ jobs:
               working-directory: api
               run: |
                 dotnet restore ./Basic3TierAPI/Basic3TierAPI.csproj
-                dotnet build
-                dotnet test
-                dotnet pack
+                dotnet build ./Basic3TierAPI/Basic3TierAPI.csproj
+                dotnet test ./Basic3TierAPI/Basic3TierAPI.csproj
+                dotnet pack ./Basic3TierAPI/Basic3TierAPI.csproj
     
 
 
