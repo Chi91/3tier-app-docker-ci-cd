@@ -61,7 +61,7 @@ jobs:
               shell: powershell
               run: |
                 .\.sonar\scanner\dotnet-sonarscanner begin /k:"3tier-docker-chi" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
-                dotnet build
+                dotnet build ./api/Basic3TierAPI/Basic3TierAPI.csproj
                 .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 
 
