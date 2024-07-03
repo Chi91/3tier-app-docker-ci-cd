@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: chi-ingress
+  namespace: chi-namespace
+  annotations:
+spec:
+  ingressClassName: 'nginx'
+  rules:
+  - http:
+      paths:
+      - path: "/"
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: loadbalancer-frontend
+            port:
+              number: 81

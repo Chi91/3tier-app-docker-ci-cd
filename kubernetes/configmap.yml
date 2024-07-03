@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-configmap
+  namespace: chi-namespace
+data:
+  config.json: |
+    {
+      "API_URL": "http://a3e218984cac14d4584f785d386c357e-911936401.eu-central-1.elb.amazonaws.com:82/"
+    }
+  

@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 3-tier-backend-deploy
+  labels:
+    app: 3-tier-backend-deploy
+  namespace: chi-namespace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend-deploy
+  template:
+    metadata:
+      labels:
+        app: backend-deploy
+    spec:
+      containers:
+        - name: backend
+          image: chi91/3tier-backend:latest
+          ports:
+            - containerPort: 80

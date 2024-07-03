@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 3-tier-postgress-deploy
+  labels: 
+    app: 3-tier-postgres-deploy
+  namespace: chi-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: basic3tier
+          image: postgres:latest
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_PASSWORD
+              value: admin123
+            - name: POSTGRES_DB
+              value: basic3tier
+            - name: POSTGRES_USER
+              value: postgres
