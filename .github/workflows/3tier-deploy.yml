@@ -17,12 +17,19 @@ jobs:
               with:
                 dotnet-version: '7.0.x'
 
-            - name: Install dependencies
-              run: dotnet restore ../../api
+            - name: Install dependency for basic3tier api
+              run: dotnet restore ../../api/Basic3TierAPI/Basic3TierAPI.csproj
+            - name: Install dependency for basic3tier core
+              run: dotnet restore ../../api/Basic3Tier.Core/Basic3Tier.Core.csproj
+            - name: Install dependency for basic3tier infrastructure
+              run: dotnet restore ../../api/Basic3Tier.Infrastructure/Basic3Tier.Infrastructure.csproj
+
             - name: Build
-              run: dotnet build
+              run: dotnet build 
+
             - name: Test with the dotnet CLI
               run: dotnet test
+              
             - name: Create package
               run: dotnet pack 
 
