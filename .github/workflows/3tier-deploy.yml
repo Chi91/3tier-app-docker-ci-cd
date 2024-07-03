@@ -28,6 +28,7 @@ jobs:
     analyse:
         name: Build and analyze
         runs-on: windows-latest
+        needs: build
     
         steps:
             - uses: actions/checkout@v4
