@@ -20,7 +20,7 @@ jobs:
             - name: Build & test backend
               working-directory: api
               run: |
-                dotnet restore 
+                dotnet restore ./Basic3TierAPI/Basic3TierAPI.csproj
                 dotnet build
                 dotnet test
                 dotnet pack
