@@ -106,7 +106,7 @@ jobs:
 
         - name: Prepare EC2 instance
           run: |
-            ssh -i ~/.ssh/id_rsa ${{vars.EC2_USER}}@${{vars.EC2_PUBLIC_IP_ADRESS}} "
+            ssh -i ~/.ssh/id_rsa ${{vars.EC2_USER}}@${{vars.EC2_PUBLIC_IP_ADRESS}}
             sudo apt-get update &&
             sudo apt-get install docker -y 
             sudo docker run --name 3tierBackend -d chi91/3tier-backend-cicd
