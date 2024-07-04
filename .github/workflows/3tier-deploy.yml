@@ -82,8 +82,7 @@ jobs:
         - name: Build & push images backend
           uses: docker/build-push-action@v6
           with:
-            context: .
-            file: /api/Dockerfile 
+            file: ./api/Dockerfile 
             push: true
             tags: chi91/3tier-backend-cicd:latest
         
