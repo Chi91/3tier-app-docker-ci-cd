@@ -16,7 +16,7 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
 # .cproj is the projectfile 
-COPY Basic3TierAPI/Basic3TierAPI.csproj Basic3TierAPI/
+COPY ./api/Basic3TierAPI/Basic3TierAPI.csproj Basic3TierAPI/
 
 # restore download all the dependencies
 RUN dotnet restore "Basic3TierAPI/Basic3TierAPI.csproj"
