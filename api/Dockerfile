@@ -34,12 +34,14 @@ RUN dotnet restore /src/api/Basic3Tier.Infrastructure/Basic3Tier.Infrastructure.
 
 
 
-# change to this directorey to start building
-WORKDIR "/src/Basic3TierAPI"
+
 
 #RUN dotnet build -c Release -o /app/build
 
 FROM build AS publish
+
+# change to this directorey to start building
+WORKDIR /src/Basic3TierAPI
 
 RUN dotnet publish -c Release -o /app/publish
 
