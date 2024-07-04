@@ -21,13 +21,13 @@ COPY ./api/Basic3TierAPI/Basic3TierAPI.csproj Basic3TierAPI/
 # restore download all the dependencies
 RUN dotnet restore "Basic3TierAPI/Basic3TierAPI.csproj"
 
-#COPY Basic3Tier.Core/Basic3Tier.Core.csproj Basic3Tier.Core/
+COPY ./api/Basic3Tier.Core/Basic3Tier.Core.csproj Basic3Tier.Core/
 
-#COPY Basic3Tier.Infrastructure/Basic3Tier.Infrastructure.csproj Basic3Tier.Infrastructure/
+COPY ./api/Basic3Tier.Infrastructure/Basic3Tier.Infrastructure.csproj Basic3Tier.Infrastructure/
 
-#RUN dotnet restore "Basic3Tier.Core/Basic3Tier.Core.csproj"
+RUN dotnet restore "Basic3Tier.Core/Basic3Tier.Core.csproj"
 
-#RUN dotnet restore "Basic3Tier.Infrastructure/Basic3Tier.Infrastructure.csproj"
+RUN dotnet restore "Basic3Tier.Infrastructure/Basic3Tier.Infrastructure.csproj"
 
 COPY . .
 
